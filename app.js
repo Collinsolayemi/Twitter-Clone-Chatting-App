@@ -12,7 +12,10 @@ app.set('views', 'views');
 
 //Rendring the pug file to the client
 app.get('/', (req, res, next) => {
-  res.status(200).render('home');
+  const payload = {
+    pageTitle: 'Home',
+  };
+  res.status(200).render('home', payload); //the home is the home.pug
 });
 
 //Creating the server
